@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mock wedding venue, officiant, and photography website for a private lakefront venue." />
+  <title>Willow & Water | Lakefront Weddings, Officiant + Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#24302b; --muted:#6f776f; --cream:#f8f4ec; --paper:#fffdf9; --sage:#80907d; --sage-dark:#5f6f5c;
+      --gold:#b69a63; --line:#ded8cb; --shadow:0 18px 60px rgba(39,48,43,.12);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:1.05;margin:0 0 .7rem} h1{font-size:clamp(3.3rem,9vw,7rem);font-weight:600;letter-spacing:-.04em} h2{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600} h3{font-size:2rem}
+    p{margin:.2rem 0 1rem}.wrap{width:min(1160px,92%);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:700;color:var(--sage-dark)}
+    nav{position:fixed;inset:0 0 auto;z-index:20;background:rgba(255,253,249,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(222,216,203,.7)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:"Cormorant Garamond",serif;font-size:1.65rem;font-weight:700;text-decoration:none;color:var(--ink)}
+    .nav-links{display:flex;gap:1.3rem;align-items:center}.nav-links a{text-decoration:none;color:var(--ink);font-size:.93rem}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.15rem;border-radius:999px;text-decoration:none;border:1px solid var(--ink);font-weight:600;transition:.2s ease;cursor:pointer}.nav-cta,.btn.primary{background:var(--ink);color:white}.btn.secondary{background:transparent;color:var(--ink)}.btn:hover,.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(36,48,43,.15)}
+    .hero{min-height:92vh;padding-top:72px;display:grid;place-items:end center;position:relative;overflow:hidden;background:
+      linear-gradient(180deg,rgba(13,24,20,.10),rgba(13,24,20,.55)),
+      url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat}
+    .hero-card{width:min(1160px,92%);padding:4.5rem 0 4rem;color:white;text-shadow:0 2px 25px rgba(0,0,0,.25)}.hero p{max-width:640px;font-size:1.12rem}.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}.hero .btn.secondary{color:white;border-color:white}
+    section{padding:6rem 0}.intro{background:var(--cream)}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}.feature-card{background:white;padding:2rem;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)}
+    .photo-stack{position:relative;min-height:520px}.photo-stack img{position:absolute;object-fit:cover;border-radius:26px;box-shadow:var(--shadow)}.photo-stack img:first-child{width:78%;height:78%;left:0;top:0}.photo-stack img:last-child{width:52%;height:55%;right:0;bottom:0;border:10px solid var(--cream)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.stat{padding:1rem;border-top:1px solid var(--line)}.stat strong{display:block;font-family:"Cormorant Garamond",serif;font-size:2rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}.card{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:white}.card img{width:100%;aspect-ratio:4/3;object-fit:cover}.card-body{padding:1.5rem}.card .price{font-size:1.05rem;font-weight:700;color:var(--sage-dark)}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:.8rem}.gallery img{width:100%;height:100%;object-fit:cover;border-radius:20px}.g1{grid-column:span 7;grid-row:span 3}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 5;grid-row:span 2}.g4{grid-column:span 4;grid-row:span 2}.g5{grid-column:span 4;grid-row:span 2}.g6{grid-column:span 4;grid-row:span 2}
+    .band{background:var(--ink);color:white}.band .eyebrow{color:#c8d3c6}.band .btn.secondary{color:white;border-color:white}
+    .faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}.faq-item{border-bottom:1px solid var(--line);padding:1.2rem 0}.faq-q{display:flex;justify-content:space-between;gap:1rem;cursor:pointer;font-weight:700}.faq-a{display:none;color:var(--muted);padding-top:.7rem}.faq-item.open .faq-a{display:block}
+    .contact{background:var(--cream)} form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.field{display:flex;flex-direction:column;gap:.45rem}.field.full{grid-column:1/-1}label{font-size:.9rem;font-weight:600}input,select,textarea{width:100%;padding:1rem;border:1px solid var(--line);border-radius:14px;background:white;font:inherit;color:var(--ink)}textarea{min-height:130px;resize:vertical}.form-note{grid-column:1/-1;color:var(--muted);font-size:.9rem}
+    footer{padding:2.5rem 0;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:2rem;align-items:center;flex-wrap:wrap;color:var(--muted)}
+    .mobile-toggle{display:none;border:0;background:none;font-size:1.7rem}
+    @media(max-width:850px){.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:1rem 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav-links.show{display:flex}.mobile-toggle{display:block}.split,.faq{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}.photo-stack{min-height:420px}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery img{grid-column:auto!important;grid-row:auto!important}.g1{grid-column:1/-1!important}.hero{min-height:88vh}form{grid-template-columns:1fr}.field.full{grid-column:auto}}
+    @media(max-width:540px){section{padding:4.5rem 0}.stats{grid-template-columns:1fr}.photo-stack{min-height:340px}.gallery{grid-template-columns:1fr}.g1{grid-column:auto!important}.hero-card{padding-bottom:2.7rem}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand">Willow & Water</a>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
+    <div class="nav-links">
+      <a href="#venue">Venue</a><a href="#services">Services</a><a href="#packages">Options</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Schedule a Tour</a>
+    </div>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="hero-card">
+    <div class="eyebrow" style="color:#edf3ec">Lakefront weddings • Louisiana</div>
+    <h1>Where your day feels like home.</h1>
+    <p>A flexible lakefront wedding experience with a private venue, an ordained officiant, and photography available together or separately — choose only what you need.</p>
+    <div class="hero-actions"><a href="#contact" class="btn primary">Schedule a Tour</a><a href="#gallery" class="btn secondary">See the Property</a></div>
+  </div>
+</header>
+
+<section class="intro" id="venue">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">A private celebration by the water</div>
+      <h2>Simple, beautiful, and personal.</h2>
+      <p>Willow & Water is a warm lakefront setting designed for couples who want the beauty of an outdoor wedding without the feel of a commercial event hall. Host your ceremony near the water, gather with family and friends under the trees, and make the entire property feel like your own for the day.</p>
+      <div class="stats">
+        <div class="stat"><strong>Lakefront</strong><span>ceremony backdrop</span></div>
+        <div class="stat"><strong>Private</strong><span>one event at a time</span></div>
+        <div class="stat"><strong>Flexible</strong><span>custom wedding plans</span></div>
+      </div>
+    </div>
+    <div class="photo-stack">
+      <img src="https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=1200&q=85" alt="Outdoor wedding venue">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85" alt="Wedding couple outdoors">
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Choose what you need</div>
+    <h2>Three services. One flexible experience.</h2>
+    <p style="max-width:760px;color:var(--muted);margin-bottom:2rem">Couples can book the lakefront venue, an ordained wedding officiant, photography, or combine any of them. Nothing is bundled unless they want it to be.</p>
+    <div class="cards">
+      <article class="card"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=85" alt="Lakefront wedding venue"><div class="card-body"><div class="eyebrow">01</div><h3>Lakefront Venue</h3><p>Private use of the property for the ceremony and celebration. Couples may bring their own officiant and photographer if they prefer.</p></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85" alt="Wedding ceremony"><div class="card-body"><div class="eyebrow">02</div><h3>Ordained Officiant</h3><p>A personal ceremony led by an ordained officiant. This can be booked at the lake venue or for a ceremony held somewhere else.</p></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Wedding photography"><div class="card-body"><div class="eyebrow">03</div><h3>Photography</h3><p>Wedding and couple photography by the in-house photographer, available at the lake venue or at another wedding location.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="packages">
+  <div class="wrap">
+    <div class="eyebrow">Book one service or combine them</div><h2>Wedding options built around the couple.</h2>
+    <p style="max-width:760px;color:var(--muted);margin-bottom:2rem">These are sample package names for the mockup. Pricing can be added later once the business decides how it wants to structure each service.</p>
+    <div class="cards">
+      <article class="card"><div class="card-body"><h3>Venue Only</h3><p>Private lakefront venue access for couples who already have their own officiant and photographer.</p><div class="price">Venue service only</div></div></article>
+      <article class="card"><div class="card-body"><h3>Officiant Only</h3><p>Ordained wedding ceremony services, whether the couple marries at the lake or at another location.</p><div class="price">Officiant service only</div></div></article>
+      <article class="card"><div class="card-body"><h3>Photography Only</h3><p>Wedding photography without requiring the couple to use the lakefront venue.</p><div class="price">Photography service only</div></div></article>
+      <article class="card"><div class="card-body"><h3>Officiant + Photography</h3><p>A ceremony and photography package for couples marrying at another venue or location.</p><div class="price">Mobile wedding services</div></div></article>
+      <article class="card"><div class="card-body"><h3>Venue + Officiant</h3><p>The lakefront setting plus an ordained officiant. Bring your own photographer or keep things simple.</p><div class="price">Flexible package</div></div></article>
+      <article class="card"><div class="card-body"><h3>Venue + Photography</h3><p>Use the lakefront property and add the in-house photographer while bringing your own officiant.</p><div class="price">Flexible package</div></div></article>
+      <article class="card"><div class="card-body"><h3>The Full Wedding</h3><p>Lakefront venue, ordained officiant, and photography together for one coordinated experience.</p><div class="price">All three services</div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="eyebrow">Picture your day here</div><h2>Lake views, quiet moments, golden light.</h2>
+    <div class="gallery">
+      <img class="g1" src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1200&q=85" alt="Wedding tables outdoors">
+      <img class="g2" src="https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?auto=format&fit=crop&w=900&q=85" alt="Bride and groom outdoors">
+      <img class="g3" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85" alt="Wedding bouquet">
+      <img class="g4" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85" alt="Reception space">
+      <img class="g5" src="https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=900&q=85" alt="Outdoor venue">
+      <img class="g6" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85" alt="Wedding couple">
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div><div class="eyebrow">Your wedding should feel like you</div><h2>Come walk the property.</h2><p>See the lake, imagine the ceremony setup, talk through your guest list, and figure out whether the space feels right before making any decisions.</p></div>
+    <div><a href="#contact" class="btn secondary">Request a Tour</a></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <div><div class="eyebrow">Questions couples ask</div><h2>Good to know before you visit.</h2><p style="color:var(--muted)">These are placeholders for the mockup. We can replace every answer with her actual policies.</p></div>
+    <div>
+      <div class="faq-item open"><div class="faq-q">How many guests can the venue hold?<span>+</span></div><div class="faq-a">Guest capacity will depend on the final ceremony and reception layout. Add the real maximum here once it is confirmed.</div></div>
+      <div class="faq-item"><div class="faq-q">What happens if it rains?<span>+</span></div><div class="faq-a">This is where her indoor, tent, rescheduling, or weather-backup policy can be explained clearly.</div></div>
+      <div class="faq-item"><div class="faq-q">Can we bring our own vendors?<span>+</span></div><div class="faq-a">Yes — or replace this answer with her approved-vendor requirements if she decides to use them.</div></div>
+      <div class="faq-item"><div class="faq-q">Do we have to book all three services?<span>+</span></div><div class="faq-a">No. The venue, officiant, and photography services can each be booked separately or combined in whatever way fits the couple.</div></div>
+      <div class="faq-item"><div class="faq-q">Can we book the officiant and photographer for another venue?<span>+</span></div><div class="faq-a">Yes. The officiant and photography services can be offered even when the couple is getting married somewhere else.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap split">
+    <div><div class="eyebrow">Start with a conversation</div><h2>Tell us what you're planning.</h2><p>No pressure, no complicated sales process. Send the basics and we'll follow up about availability, a tour, and the options that make sense for your day.</p><p><strong>Mock contact:</strong><br>hello@willowandwater.example<br>(985) 555-0148</p></div>
+    <form id="inquiryForm">
+      <div class="field"><label for="name">Your name</label><input id="name" required placeholder="First and last name"></div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="you@example.com"></div>
+      <div class="field"><label for="date">Wedding date</label><input id="date" type="date"></div>
+      <div class="field"><label for="guests">Estimated guests</label><input id="guests" type="number" min="1" placeholder="75"></div>
+      <div class="field full"><label for="interest">I'm interested in</label><select id="interest"><option>Venue only</option><option>Officiant only</option><option>Photography only</option><option>Officiant + photography</option><option>Venue + officiant</option><option>Venue + photography</option><option>Venue + officiant + photography</option><option>I'm not sure yet</option></select></div>
+      <div class="field full"><label for="message">Anything else?</label><textarea id="message" placeholder="Tell us a little about the day you're picturing..."></textarea></div>
+      <div class="field full"><button class="btn primary" type="submit">Send Inquiry</button></div>
+      <div class="form-note" id="formNote">Demo form only — no information is actually sent.</div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap footer-inner"><div><strong>Willow & Water</strong><br>Lakefront weddings • ordained officiant • photography</div><div>Mock website concept • Replace with real business details</div></div></footer>
+
+<script>
+  const toggle=document.querySelector('.mobile-toggle'); const nav=document.querySelector('.nav-links');
+  toggle.addEventListener('click',()=>nav.classList.toggle('show'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('show')));
+  document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+  document.getElementById('inquiryForm').addEventListener('submit',e=>{e.preventDefault();const note=document.getElementById('formNote');note.textContent='Demo submitted! On the real site, this would email the venue or save the inquiry.';note.style.fontWeight='700';});
+</script>
+</body>
+</html>
